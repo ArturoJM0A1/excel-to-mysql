@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Excel a MySQL - Convertidor</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="module" crossorigin src="/assets/index-Bj254UOf.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Cg0tPE6g.css">
+</head>
+<body>
+<div id="root"></div>
+<div class="matrix-bg" id="matrixBg" aria-hidden="true"></div>
+<script>
+(function(){
+  var bg = document.getElementById('matrixBg');
+  if (!bg) return;
+  var chars = '010101101010101001010101101001010110';
+  var cols = Math.floor(window.innerWidth / 28);
+  if (cols > 60) cols = 60;
+  if (cols < 10) cols = 10;
+  for (var i = 0; i < cols; i++) {
+    var span = document.createElement('span');
+    span.className = 'matrix-col';
+    var length = 12 + Math.floor(Math.random() * 20);
+    var text = '';
+    for (var j = 0; j < length; j++) {
+      text += chars[Math.floor(Math.random() * chars.length)];
+    }
+    span.textContent = text;
+    span.style.setProperty('--x', Math.random() * 98);
+    span.style.setProperty('--d', Math.random() * 5);
+    span.style.setProperty('--r', Math.random());
+    bg.appendChild(span);
+  }
+})();
+</script>
+</body>
+</html>
